@@ -14,14 +14,13 @@ app.use(bodyParser.urlencoded({
  }));
 app.use(express.json());
 
-app.use(express.static('project'));
-app.use('/posts', postRoute);
+
 
 
 app.get('/weather', async (req, res) => {
 
-    const response = await axios.get(
-        '/posts',
+    const resp = await axios.get(
+        'http://localhost:3000/posts',
       ).then( async (data) => {
           const coords = data.data[data.data.length - 1];
 
@@ -31,7 +30,6 @@ app.get('/weather', async (req, res) => {
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${process.env.API_TOKEN}`)
             const results = await response.json();
     
-          
             
             const reject = () => {
                 res.setHeader('www-authenticate', 'Basic')
@@ -64,7 +62,8 @@ app.get('/weather', async (req, res) => {
 
  
 })
-
+app.use(express.static('project'));
+app.use('/posts', postRoute);
 
 app.listen(process.env.PORT || 3000,
     () => console.log("server is running..."));
