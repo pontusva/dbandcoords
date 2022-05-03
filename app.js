@@ -18,7 +18,7 @@ app.use(express.static('project'));
 app.use('/posts', postRoute);
 
 
-app.get(process.env.SECRET_ROUTE, async (req, res) => {
+app.use(process.env.SECRET_ROUTE, async (req, res) => {
 
     const response = await axios.get(
         '/posts',
