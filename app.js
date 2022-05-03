@@ -20,7 +20,7 @@ app.use(express.json());
 app.get('/weather', async (req, res) => {
 
     const resp = await axios.get(
-        'http://localhost:3000/posts',
+        '/posts',
       ).then( async (data) => {
           const coords = data.data[data.data.length - 1];
 
