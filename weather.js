@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     
     
     const resp = await axios.get(
-        '/posts',
+        'https://themostsecretapp.herokuapp.com/posts',
       ).then( async (data) => {
           const coords = data.data[data.data.length - 1];
 
