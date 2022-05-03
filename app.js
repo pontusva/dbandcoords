@@ -24,7 +24,7 @@ app.use(express.json());
 
 app.use(express.static('project'));
 app.use('/posts', postRoute);
-// app.use('/weather', weatherRoute);
+app.use('/weather', weatherRoute);
 
 app.listen(process.env.PORT || 3000,
     () => console.log("server is running..."));
