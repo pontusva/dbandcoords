@@ -21,7 +21,7 @@ app.use('/posts', postRoute);
 app.get(process.env.SECRET_ROUTE, async (req, res) => {
 
     const response = await axios.get(
-        'http://localhost:3000/posts',
+        '/posts',
       ).then( async (data) => {
           const coords = data.data[data.data.length - 1];
 
