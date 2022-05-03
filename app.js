@@ -8,8 +8,10 @@ const postRoute = require('./posts');
 const weatherRoute = require ('./weather')
 const dotenv = require('dotenv');
 const axios = require('axios');
+const cors = require('cors');
 dotenv.config();
 
+app.use(cors());
 app.use(bodyParser.urlencoded({
     extended: true
  }));
