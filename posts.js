@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
     
     async function getCoords() {
         const response = await axios.get(
-          'https://themostsecretapp.herokuapp.com/posts',
+          '/posts',
         ).then( async (data) => {
             const coords = data.data[data.data.length - 1];
 
