@@ -18,7 +18,7 @@ app.use(express.static('project'));
 app.use('/posts', postRoute);
 
 
-app.use('/weather', async (req, res) => {
+app.get('/weather', async (req, res) => {
 
     const response = await axios.get(
         '/posts',
