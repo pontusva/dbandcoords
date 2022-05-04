@@ -4,7 +4,7 @@ const axios = require('axios');
 const fetch = require('node-fetch');
 
 router.get('/', async (req, res) => {
-    
+    // console.log("just a comment so i can push to github")
     
     const resp = await axios.get(
         'https://themostsecretapp.herokuapp.com/posts',
