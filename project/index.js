@@ -29,6 +29,8 @@ function  showPosition(position) {
 
 }
 
+showPostion();
+
 
 
 
